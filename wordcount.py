@@ -6,11 +6,7 @@ import sys
 import argparse
 import os
 
-#adding up and creating the optional arguments
-parser = argparse.ArgumentParser(description="word frequency in a text file")
-parser.add_argument('-i','--input',type=str,required=True,help='input')
-parser.add_argument('-o','--output',type=str,required=True,help='output')
-args = parser.parse_args()
+
 
 
 # Removing all punctuations and making sure, everything in lower case
@@ -44,6 +40,13 @@ def words_count(words):
 
 
 if __name__=="__main__":
+				# adding up and creating the optional arguments
+				parser = argparse.ArgumentParser(description="word frequency in a text file")
+				parser.add_argument('-i', '--input', type=str, required=True, help='input')
+				parser.add_argument('-o', '--output', type=str, required=True, help='output')
+				args = parser.parse_args()
+
+
 				#to make sure whether its a folder path or file path
 				if os.path.isfile(args.input):
 								f = open(args.input,"r")
